@@ -96,7 +96,7 @@
             <cbc:CompanyID schemeAgencyID="195"
                schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
                schemeID="0" schemeName="13">800197268</cbc:CompanyID>
-            <cbc:TaxLevelCode listName="05">O-99</cbc:TaxLevelCode>
+            <cbc:TaxLevelCode listName="04">O-99</cbc:TaxLevelCode>
             <cac:RegistrationAddress>
                <cbc:ID>11001</cbc:ID>
                <cbc:CityName>Bogotá, D.c. </cbc:CityName>
@@ -157,8 +157,8 @@
             <cbc:RegistrationName>OPTICAS GMO COLOMBIA S A S</cbc:RegistrationName>
             <cbc:CompanyID schemeAgencyID="195"
                schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
-               schemeID="3" schemeName="31">900108281</cbc:CompanyID>
-            <cbc:TaxLevelCode listName="05">R-99-PN</cbc:TaxLevelCode>
+               schemeID="1" schemeName="31">900108281</cbc:CompanyID>
+            <cbc:TaxLevelCode listName="04">R-99-PN</cbc:TaxLevelCode>
             <cac:TaxScheme>
                <cbc:ID>01</cbc:ID>
                <cbc:Name>IVA</cbc:Name>
@@ -168,19 +168,20 @@
             <cbc:RegistrationName>OPTICAS GMO COLOMBIA S A S</cbc:RegistrationName>
             <cbc:CompanyID schemeAgencyID="195"
                schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
-               schemeID="3" schemeName="31">900108281</cbc:CompanyID>
+               schemeID="1" schemeName="31">900108281</cbc:CompanyID>
          </cac:PartyLegalEntity>
       </cac:Party>
    </cac:AccountingCustomerParty>
    <cac:PaymentMeans>
       <cbc:ID>2</cbc:ID>
       <cbc:PaymentMeansCode>41</cbc:PaymentMeansCode>
+      <cbc:PaymentDueDate>2024-07-15</cbc:PaymentDueDate>
    </cac:PaymentMeans>
    <cac:LegalMonetaryTotal>
       <cbc:LineExtensionAmount currencyID="COP">12600.06</cbc:LineExtensionAmount>
       <cbc:TaxExclusiveAmount currencyID="COP">12787.56</cbc:TaxExclusiveAmount>
       <cbc:TaxInclusiveAmount currencyID="COP">15024.07</cbc:TaxInclusiveAmount>
-      <cbc:PrepaidAmount currencyID="COP">1000.00</cbc:PrepaidAmount>
+      <cbc:AllowanceTotalAmount currencyID="COP">0</cbc:AllowanceTotalAmount>
       <cbc:PayableAmount currencyID="COP">15024.07</cbc:PayableAmount>
    </cac:LegalMonetaryTotal>
 </Invoice>

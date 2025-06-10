@@ -24,6 +24,7 @@ class ControlDto(BaseModel):
 class PaymentDto(BaseModel):
     PaymentID: str
     PaymentCode: str
+    PaymentDueDate: str
 
 class TaxSubTotalDto(BaseModel):
     TaxAmount: str

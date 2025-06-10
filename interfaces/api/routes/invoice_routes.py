@@ -30,3 +30,8 @@ def create(request: CreditNoteDto):
         return create_note.start()
     except Exception as e:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Error al crear la factura: " + str(e))
+
+
+@router.get("/health_check")
+def health_check():
+    return {"status": "OK"}

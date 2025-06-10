@@ -30,14 +30,14 @@ class CreateInvoiceCase:
             "ValFac": self.invoice.Amounts.LineExtensionAmount,
             # IVA
             "CodImp1": '01', 
-            "ValImp1": self.invoice.Amounts.TaxTotals[0].TaxAmount,
+            "ValImp1": '0.00',
             # Impuesto Nacional al Consumo
             "CodImp2": '04',
             "ValImp2": '0.00',
             # ICA
             "CodImp3": '03', 
             "ValImp3": '0.00',
-            "ValTot": self.invoice.Amounts.TaxInclusiveAmount,
+            "ValTot": self.invoice.Amounts.LineExtensionAmount,
             "NitOFE": self.invoice.Company.CompanyID,
             "NumAdq": self.invoice.Customer.ID,
             "ClTec": self.invoice.Control.TechnicalKey,
@@ -81,7 +81,11 @@ class CreateInvoiceCase:
                 print(f"Error al enviar la factura. XML enviado: {self.xml_name}")
                 print(f"Error al enviar la factura. Respuesta XML: {response.text}")
                 raise Exception(messages)
-            
+
+            if is_valid == 'true':
+                print(f"Factura Enviada y validada en la DIAN")
+                print(f"messages: {response.text}")
+
         except Exception as e:
             print(f"Error al enviar la factura. XML enviado: {self.xml_name}")
             print(f"Error al enviar la factura. Respuesta XML: {e}")
@@ -185,6 +189,7 @@ class CreateInvoiceCase:
     def _set_payment(self):
         self.xml.Payment.PaymentID = self.invoice.Payment.PaymentID
         self.xml.Payment.PaymentCode = self.invoice.Payment.PaymentCode
+        self.xml.Payment.PaymentDueDate = self.invoice.Payment.PaymentDueDate
 
     def _set_invoice(self):
         firt_day, last_day = generic.get_period(self.invoice.IssueDate)

@@ -100,7 +100,7 @@ class InvoiceBase:
         etree.SubElement(line_xml, f'{cbc}ID').text = str(line["ID"])
         etree.SubElement(line_xml, f'{cbc}InvoicedQuantity', unitCode="EA").text = str(line["Quantity"])
         etree.SubElement(line_xml, f'{cbc}LineExtensionAmount', currencyID="COP").text = str(line["LineExtensionAmount"])
-        # etree.SubElement(line_xml, f'{cbc}FreeOfChargeIndicator').text = str(line["FreeOfChargeIndicator"])
+        etree.SubElement(line_xml, f'{cbc}FreeOfChargeIndicator').text = str('false')
 
         # Add Delivery element
         # delivery = etree.SubElement(line_xml, f'{cac}Delivery')
@@ -121,7 +121,7 @@ class InvoiceBase:
         etree.SubElement(tax_total, f'{cbc}TaxAmount', currencyID="COP").text = str(line["TaxAmount"])
         tax_subtotal = etree.SubElement(tax_total, f'{cac}TaxSubtotal')
         etree.SubElement(tax_subtotal, f'{cbc}TaxableAmount', currencyID="COP").text = str(line["TaxableAmount"])
-        etree.SubElement(tax_subtotal, f'{cbc}TaxAmount', currencyID="COP").text = str(line["TaxSubtotalAmount"])
+        etree.SubElement(tax_subtotal, f'{cbc}TaxAmount', currencyID="COP").text = str(line["TaxAmount"])
         tax_category = etree.SubElement(tax_subtotal, f'{cac}TaxCategory')
         etree.SubElement(tax_category, f'{cbc}Percent').text = str(line["TaxPercent"])
         tax_scheme = etree.SubElement(tax_category, f'{cac}TaxScheme')
